@@ -1,6 +1,7 @@
 # Projeto de Desenvolvimento Web II
 ###### IFC - Araquari / 2017
 ###### Projeto desenvolvido em ambiente Linux, programa PyCharm e front-end feito no Pingendo.
+###### Site para download de fontes gratuito.
 
 ### Comandos
 
