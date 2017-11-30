@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center display-2">Categorias</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% for c in category %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-3">{{ c.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-group">
+              {% if font %}
+                  {% for f in font %}
+                      <li class="list-group-item"> <a href="{{ f.url }}">{{ f.name }} </a></li>
+                  {% endfor %}
+             {% else %}
+                  <li class="list-group-item"> A categoria {{ c.name }} não possui fontes cadastradas.</li>
+              {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

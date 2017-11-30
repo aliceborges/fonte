@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
+          <div class="card text-white p-5 bg-primary">
+            <div class="card-body">
+              <h1 class="mb-4">Entre:</h1>
+              <form action="{% url 'login' %}" method="POST" id="login_form">
+                  {% csrf_token %}
+                <div class="form-group"> <label>Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="Ex.: joao.silva"> </div>
+                <div class="form-group"> <label>Password</label>
+                  <input type="password" type="password" name="password" class="form-control" placeholder="Senha"> </div>
+                <button type="submit" class="btn btn-secondary">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

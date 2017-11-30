@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
+          <div class="card text-white p-5 bg-dark">
+            <div class="card-body">
+                {% if registered %}
+                    <h1 class="mb-4 text-center">Você já está cadastrado.</h1>
+                {% else %}
+              <h1 class="mb-4 text-center">Cadastre-se</h1>
+              <form action="{% url 'register' %}" method="post" id="user_form" enctype="multipart/form-data">
+               {% csrf_token %}
+                  {{ user_form.as_p }}
+                  {{ profile_form.as_p }}
+                <button type="submit" class="btn btn-secondary text-center">Cadastre-se</button>
+              </form>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+  </div>
+      </div>
+    </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Já tem cadastro? <a href="{% url 'login' %}">Entre</a>.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

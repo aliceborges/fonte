@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            {% block title_block %}
+                <h1 class="">Adicionar página em {{ category.name }}</h1>
+            {% endblock title_block %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+             Adicione uma página na categoria
+             <a href="/categoria/{{category.slug}}/">{{ category.name }}</a>
+          <form id="category_form" method="post" action="#">
+            <div class="form-group">
+                {% csrf_token %}
+
+           {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }} <br/>
+                {{ field }} <br/>
+            {% endfor %}
+            </div>
+            <button type="submit" name="submit" class="btn btn-success">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
