@@ -14,8 +14,8 @@ git clone https://github.com/aliceborges/fonte
 #### 2. Instalar/Verificar se tem Virtualenvwrapper na máquina:
 ```
 sudo apt install virtualenvwrapper
-mkvirtualenv rango
-workon rango
+mkvirtualenv fonte
+workon fonte
 ```
 
 #### 3. Entrar na pasta do projeto e instalar as dependências:
