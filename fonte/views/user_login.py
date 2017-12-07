@@ -1,3 +1,4 @@
+#coding:utf-8
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
@@ -21,3 +22,6 @@ def user_login (request):
             return HttpResponse("Seus dados de login estão inválidos.")
     else:
         return render(request, '../templates/login.html', {})
+
+    def __unicode__(self):
+        return '%s' % self.name
