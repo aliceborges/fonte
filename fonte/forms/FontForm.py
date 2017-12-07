@@ -1,3 +1,4 @@
+#coding:utf-8
 from django import forms
 from fonte.models import Font
 
@@ -26,3 +27,6 @@ class FontForm(forms.ModelForm):
     class Meta:
         model = Font
         exclude = ('category',)
+
+    def __unicode__(self):
+        return '%s' % self.name
